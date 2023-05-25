@@ -1,0 +1,28 @@
+
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+.grid-container{
+    width: 482px;
+    height: 480px;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap:wrap;
+    align-content: flex-start;
+    margin:auto;
+    
+}
+
+.square{
+    width: 30px;
+    height: 30px;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.square-hover{
+    background-color: yellowgreen;
+}
