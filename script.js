@@ -1,27 +1,73 @@
-
+let grid_size = 16;
+let isDark = 'false';
+let isLight = 'true';
+let darkenPercent;
 
 const grid_container = document.querySelector('.grid-container');
 
-for(let i = 0; i <256; i++){
-    const grid_box = document.createElement('div');
-    grid_box.classList.add('square');
+function initializeSquares() {
+    removeSquares();
 
-    grid_container.appendChild(grid_box);
+    for (let i = 0; i < grid_size * grid_size; i++) {
+        const grid_box = document.createElement('div');
+        grid_box.classList.add('square');
+        grid_box.style.width = `${600 / grid_size}px`;
+        grid_box.style.height = `${600 / grid_size}px`;
+        grid_box.style.borderBottom = '2px solid #A75D5D'
+        grid_box.style.borderRight = '2px solid #A75D5D'
+
+        grid_container.appendChild(grid_box);
+    }
+    hoverSquares();
 }
 
-const square = document.querySelectorAll('.square');
 
-
-
-function color(){
-
-        this.style.backgroundColor = 'yellow';
-    
-    
+function removeSquares() {
+    while (grid_container.childElementCount > 0) {
+        grid_container.firstElementChild.remove();
+    }
 }
 
-square.forEach(element => element.addEventListener('mouseenter', color));
+function darken(element){
+            darkenPercent = Number(element.dataset.darkenpercent) - 10;
+            element.style.filter = `brightness(${darkenPercent}%)`;
+            element.dataset.darkenpercent = darkenPercent;
+}
+
+function hoverSquares(){
+    const square = grid_container.querySelectorAll('*');
+    square.forEach(element => element.addEventListener('mouseenter', () => {
+        if(element.classList.contains('square-hover') && isDark === 'true'){
+darken(element);
+             }
+        else{
+        element.classList.add('square-hover')
+        element.setAttribute('data-darkenPercent', '100');
+             }
+
+    }));
+}
+
+function setCanvas() {
+    grid_size = parseInt(prompt('Please enter grid size:', '5'));
+    initializeSquares();
+}
+
+const btn = document.querySelector('.btnCanvas');
+btn.addEventListener('click', setCanvas);
 
 
+const btnDarken = document.querySelector('.btnDarken');
+
+btnDarken.addEventListener('click', () => {
+    if(isDark === 'false') {isDark = 'true'}
+    else if(isDark === 'true'){
+        isDark = 'false';
+    }
+});
+
+
+
+initializeSquares();
 
 
