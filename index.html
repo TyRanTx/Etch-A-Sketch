@@ -7,34 +7,38 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-<body>
+<body ondragstart="return false;" ondrop="return false;">
 
-  <div id="header"></div>
+  <div id="header">
+    Etch-A-Sketch
+  </div>
+
   <div class="main-container">
-    <div class="button-container">
-    <div class="btn-container">
-      <button class="btnCanvas">Canvas Size</button>
-    </div>
-    <div class="btn-container">
-      <button class="btnDarken">Darken</button>
-    </div>
-    <div class="btn-container">
-      <button class="btnLighten">Lighten</button>
-    </div>
-    <div class="btn-container">
-      <button class="btnReset">Reset</button>
-    </div>
-    <div class="btn-container">
-      <button class="btnEraser">Eraser</button>
-    </div>
-    <div class="btn-container">
-      <button class="btnRainbow">Rainbow</button>
-    </div>
-  </div>
 
-    <div class="grid-container-parent">
-    <div class="grid-container" draggable="false"></div>
-  </div>
+    <div class="button-container">
+      <div class="btn">
+        <button  onclick="setCanvas()" class="btnCanvas">Canvas Size</button>
+      </div>
+      <div class="btn">
+        <button onclick="toggleDarken()" class="btnDarken">Darken</button>
+      </div>
+      <div class="btn">
+        <button onclick="toggleLighten()" class="btnLighten">Lighten</button>
+      </div>
+      <div class="btn">
+        <button onclick="reset()" class="btnReset">Reset</button>
+      </div>
+      <div class="btn">
+        <button onclick="toggleEraser()" class="btnEraser">Eraser</button>
+      </div>
+      <div class="btn">
+        <button onclick="toggleRandomColor()" class="btnRandomColor">Random Color</button>
+      </div>
+    </div>
+
+      <div class="canvas" draggable="false"></div>
+
+
   </div>
 
   <div id="bottom"></div>
