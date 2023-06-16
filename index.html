@@ -8,41 +8,31 @@
 </head>
 
 <body ondragstart="return false;" ondrop="return false;">
-
-  <div id="header">
-    Etch-A-Sketch
-  </div>
-
+  <div id="header">Etch-A-Sketch</div>
   <div class="main-container">
-
     <div class="button-container">
       <div class="btn">
-        <button  onclick="setCanvas()" class="btnCanvas">Canvas Size</button>
+        <button onclick="setCanvas()" id="btnCanvas">Canvas Size</button>
       </div>
       <div class="btn">
-        <button onclick="toggleDarken()" class="btnDarken">Darken</button>
+        <button onclick="toggleDarken()" id="btnDarken">Darken</button>
       </div>
       <div class="btn">
-        <button onclick="toggleLighten()" class="btnLighten">Lighten</button>
+        <button onclick="toggleLighten()" id="btnLighten">Lighten</button>
       </div>
       <div class="btn">
-        <button onclick="reset()" class="btnReset">Reset</button>
+        <button onclick="reset()" id="btnReset">Reset</button>
       </div>
       <div class="btn">
-        <button onclick="toggleEraser()" class="btnEraser">Eraser</button>
+        <button onclick="toggleEraser()" id="btnEraser">Eraser</button>
       </div>
       <div class="btn">
-        <button onclick="toggleRandomColor()" class="btnRandomColor">Random Color</button>
+        <button onclick="toggleRandomColor()" id="btnRandomColor">Random Color</button>
       </div>
     </div>
-
-      <div class="canvas" draggable="false"></div>
-
-
+    <div class="canvas"></div>
   </div>
-
-  <div id="bottom"></div>
-
+  <div id="bottom">Made with<i class="fa fa-heart" style="font-size:20px;color: #ea0b0b; padding-left: 5px; padding-right: 5px;"></i> by Sam</div>
 </body>
 
 </html>
